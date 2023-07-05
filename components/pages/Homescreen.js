@@ -1,34 +1,23 @@
-import React from 'react'
-import {View,StyleSheet,Button,Text} from "react-native"
-import { useFonts,Inter_500Medium,Inter_700Bold,Inter_400Regular } from '@expo-google-fonts/inter';
+import React, { useState } from 'react'
+import {View,StyleSheet,Button,Text,Image,FlatList,ScrollView} from "react-native"
+
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Catogory } from '../catogory/Catogory';
+import Catogorycard from '../catogory/Catogorycard';
+
+
 
 
 const Homescreen = ({navigation,route}) => {
   const detail=route.params;
-
-  const daoctordetail= {'id':1,
-    
-  "name": "Dr. Rajesh Kumar",
-  "specialization": "Cardiology",
-  "qualification": "MBBS, MD",
-  "hospital": "Apollo Hospital",
-  "city": "Chennai",
-  "pic":'../../assets/form.png'
-};
+  
 
 
-  let [fontsLoaded] = useFonts({
-    Inter_500Medium,Inter_400Regular,Inter_700Bold,
-    
- });
 
- if (!fontsLoaded) {
-   return null;
- }
+
  
   return (
-   <View>
+   <View style={styles.container}>
     
        <View style={styles.headertextview}>
           <View >
@@ -41,10 +30,24 @@ const Homescreen = ({navigation,route}) => {
           </View>
        </View>
 
-      <Text style={styles.cataogorytext}>
-          Catogory
-      </Text>
-
+     
+     <View>
+         <Text style={styles.catogorytext}> Catogory </Text>
+           <ScrollView horizontal showsHorizontalScrollIndicator={false}
+                style={styles.catogoryfields}  >
+                {Catogory && Catogory.map((doctor) => (
+          
+              <Catogorycard key={doctor.id} doctor={doctor} navigation={navigation}/>
+        
+                ))}
+           </ScrollView>
+     
+     </View>
+   
+    
+         
+   
+    
         
    
    </View>
@@ -76,8 +79,24 @@ const styles=StyleSheet.create({
   },
   username:{
     fontFamily:'Inter_500Medium',
-    fontSize:20,
+    fontSize:16,
     
+  },
+  catogoryfields:{
+    flexDirection:'row',
+    overflow:'scroll'
+  },
+  container:{
+    backgroundColor:'#FFFFFF',
+    
+  },
+  catogorytext:{
+    fontFamily:"Inter_700Bold",
+    fontSize:18,
+    color:'#504F4F',
+    marginTop:18,
+    marginLeft:10,
+
   }
 
 })

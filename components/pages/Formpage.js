@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View,Text ,StyleSheet,SafeAreaView,Image,TextInput, Pressable, Alert }from 'react-native'
 import { useFonts,Inter_500Medium ,Inter_700Bold,Inter_400Regular} from '@expo-google-fonts/inter';
+
 import { Button } from 'react-native-paper';
 
 
@@ -11,14 +12,6 @@ const Formpage = ({navigation}) => {
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')
 
-  let [fontsLoaded] = useFonts({
-     Inter_500Medium,Inter_400Regular,Inter_700Bold,
-     
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
   
   const handlesubmit=()=>{
     
@@ -31,6 +24,17 @@ const Formpage = ({navigation}) => {
       }
      
   }
+
+  
+  let [fontsLoaded] = useFonts({
+    Inter_500Medium,Inter_400Regular,Inter_700Bold,
+    
+ });
+
+ if (!fontsLoaded) {
+   return null;
+ }
+ 
 
   return (
    <SafeAreaView style={styles.container}>

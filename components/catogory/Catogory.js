@@ -1,12 +1,27 @@
 
-export const Catogory ={
-    "catogory":"Heart",
-    
-}
+import m1 from "../../assets/images/m1.jpeg"
+
+import m2 from "../../assets/images/m2.jpeg"
+
+import m3 from "../../assets/images/men3.jpeg"
+import m7 from "../../assets/images/m7.jpeg"
+import m5 from "../../assets/images/m5.jpeg"
+import m6 from "../../assets/images/m6.jpeg"
+
+import m8 from "../../assets/images/m8.jpeg"
+
+import w1 from "../../assets/images/w1.jpeg"
+import w2 from "../../assets/images/w2.jpeg"
+import w3 from "../../assets/images/w3.jpeg"
+import w4 from "../../assets/images/w4.jpeg"
+import w5 from "../../assets/images/w5.jpeg"
+import w6 from "../../assets/images/w6.jpeg"
+
 
 
 export const Doctorslist=[
     {'id':1,
+        "pic":m1 ,
     
         "name": "Dr. Rajesh Kumar",
         "specialization": "Cardiology",
@@ -15,6 +30,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':2,
+          "pic": w1,
       
         "name": "Dr. Sangeetha Ramanathan",
         "specialization": "Dermatology",
@@ -23,6 +39,7 @@ export const Doctorslist=[
         "city": "Coimbatore"
       },
       {'id':3,
+          "pic":m2 ,
       
         "name": "Dr. Arun Sharma",
         "specialization": "Orthopedics",
@@ -31,6 +48,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':4,
+          "pic": w2,
       
         "name": "Dr. Nithya Krishnan",
         "specialization": "Gynecology",
@@ -39,6 +57,7 @@ export const Doctorslist=[
         "city": "Coimbatore"
       },
       {'id':5,
+          "pic": m3,
       
         "name": "Dr. Karthik Raghavan",
         "specialization": "Pediatrics",
@@ -47,6 +66,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':6,
+          "pic": w3,
       
         "name": "Dr. Deepa Menon",
         "specialization": "Ophthalmology",
@@ -55,6 +75,7 @@ export const Doctorslist=[
         "city": "Madurai"
       },
       {'id':7,
+          "pic":w4 ,
       
         "name": "Dr. Anitha Kumar",
         "specialization": "Psychiatry",
@@ -63,6 +84,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':8,
+          "pic":m7 ,
       
         "name": "Dr. Vijay Kumar",
         "specialization": "Urology",
@@ -71,6 +93,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':9,
+          "pic": w6,
       
         "name": "Dr. Priya Sundaram",
         "specialization": "Dentistry",
@@ -79,6 +102,7 @@ export const Doctorslist=[
         "city": "Coimbatore"
       },
       {'id':10,
+          "pic": m5,
       
         "name": "Dr. Manoj Kumar",
         "specialization": "ENT",
@@ -87,6 +111,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':11,
+          "pic": w1,
       
         "name": "Dr. Shalini Srinivasan",
         "specialization": "Dermatology",
@@ -95,6 +120,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':12,
+          "pic": m6,
       
         "name": "Dr. Ramesh Babu",
         "specialization": "Neurology",
@@ -103,6 +129,7 @@ export const Doctorslist=[
         "city": "Coimbatore"
       },
       {'id':13,
+          "pic": w2,
       
         "name": "Dr. Kavitha Mohan",
         "specialization": "Obstetrics",
@@ -111,6 +138,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':14,
+          "pic": m8,
       
         "name": "Dr. Arvind Rajan",
         "specialization": "Cardiology",
@@ -119,6 +147,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':15,
+          "pic":w3 ,
       
         "name": "Dr. Meera Subramanian",
         "specialization": "Dentistry",
@@ -127,6 +156,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':16,
+          "pic": m1,
       
         "name": "Dr. Ravi Varma",
         "specialization": "Oncology",
@@ -135,6 +165,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':17,
+          "pic": w4,
       
         "name": "Dr. Geetha Krishnan",
         "specialization": "Psychiatry",
@@ -143,6 +174,7 @@ export const Doctorslist=[
         "city": "Coimbatore"
       },
       {'id':18,
+          "pic": m7,
       
         "name": "Dr. Manoj Pillai",
         "specialization": "Orthopedics",
@@ -151,6 +183,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':19,
+          "pic": w5,
       
         "name": "Dr. Devi Prasad",
         "specialization": "Gastroenterology",
@@ -159,6 +192,7 @@ export const Doctorslist=[
         "city": "Chennai"
       },
       {'id':20,
+          "pic": w6,
       
         "name": "Dr. Lakshmi Narayanan",
         "specialization": "Dermatology",
@@ -167,25 +201,40 @@ export const Doctorslist=[
         "city": "Chennai"
       },
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        
+]
+
+
+import Cardio from "./catogoryicon/ca.png"
+import Dermatology from "./catogoryicon/de.png"
+import Orthopedics from "./catogoryicon/or.png"
+import den from "./catogoryicon/den.png"
+import gas from "./catogoryicon/stomach.png"
+
+export const Catogory=[
+  {
+    "id":1,
+    "name":'Cardiology',
+    "icon":Cardio
+  },
+  {
+    'id':2,
+    "name":'Dermatology',
+    "icon":Dermatology
+
+  },
+  {
+    "id":3,
+    "name":'Orthopedics',
+    "icon":Orthopedics
+  },
+  {
+    "id":4,
+    "name":"Gastroenterology",
+    "icon":gas
+  },
+  {
+    "id":5,
+    "name":"dentist",
+    "icon":den
+  }
 ]

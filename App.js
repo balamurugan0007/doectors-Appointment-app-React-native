@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
+
 // You can import from local files
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,12 +20,14 @@ export default function App() {
          
           >
             
-                  <stack.Screen name="Details" component={Formpage} options={{header:()=>null}} 
+                  
+                    <stack.Screen name="Details" component={Formpage} options={{header:()=>null}} 
              
            />
                   <stack.Screen name='Home' component={Homescreen} options={{header:()=>null}}/>
                   
           </stack.Navigator>
+       
     </NavigationContainer>
     
   );
