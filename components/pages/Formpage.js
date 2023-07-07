@@ -4,10 +4,14 @@ import { useFonts,Inter_500Medium ,Inter_700Bold,Inter_400Regular} from '@expo-g
 
 import { Button } from 'react-native-paper';
 
+import { useNavigation } from '@react-navigation/native';
+
 
 
 
 const Formpage = ({navigation}) => {
+
+  const user={"name":name,"age":email,"city":password}
   const [name,setname]=useState('')
   const [email,setemail]=useState('')
   const [password,setpassword]=useState('')

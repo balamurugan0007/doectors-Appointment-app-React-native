@@ -2,13 +2,16 @@
 import React, { forwardRef } from 'react'
 import { View ,Text,StyleSheet,Image,ScrollView ,TouchableOpacity} from 'react-native'
 import { Button } from 'react-native-paper'
+import { useNavigation } from '@react-navigation/native'
 
 const Catogorycard = forwardRef(({doctor},ref) => {
+
+   const navigation= useNavigation();
   return (
     
          
                <View style={styles.catogorybox} ref={ref} >
-                   <TouchableOpacity  onPress={()=>console.log('clisked')}>
+                   <TouchableOpacity  onPress={()=>navigation.navigate('Catogory',{'id':doctor.id,'name':doctor.name})}>
              <Image style={styles.Icons} source={doctor.icon}/>
              </TouchableOpacity>
              <Text style={styles.catogoryname}>{doctor.name}</Text>

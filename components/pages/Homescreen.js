@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import {View,StyleSheet,Button,Text,Image,FlatList,ScrollView} from "react-native"
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Catogory } from '../catogory/Catogory';
-import Catogorycard from '../catogory/Catogorycard';
+import { Catogory } from '../data/Catogory';
+import Catogorycard from '../cards/Catogorycard';
+import { Doctorslist } from '../data/Catogory';
+import Doctorprofilecard from '../cards/Doctorprofilecard';
+
 
 
 
@@ -31,6 +34,7 @@ const Homescreen = ({navigation,route}) => {
        </View>
 
      
+     <ScrollView>
      <View>
          <Text style={styles.catogorytext}> Catogory </Text>
            <ScrollView horizontal showsHorizontalScrollIndicator={false}
@@ -43,12 +47,17 @@ const Homescreen = ({navigation,route}) => {
            </ScrollView>
      
      </View>
+
+
+     <View>
+     <Text style={styles.catogorytext}> Top Doctors </Text>
+         {  Doctorslist && Doctorslist.map((list)=>(
+          <Doctorprofilecard key={list.id} list={list}/>
+         ))}
+     </View>
+     </ScrollView>
    
     
-         
-   
-    
-        
    
    </View>
   )

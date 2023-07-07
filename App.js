@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet,Button } from 'react-native';
 import Constants from 'expo-constants';
 
 
@@ -9,23 +9,30 @@ import Homescreen from './components/pages/Homescreen';
 import Formpage from './components/pages/Formpage';
 import Splash1 from './components/pages/SplashScreen1';
 import Splash2 from './components/pages/Splash2';
+import Doctor from './components/pages/Doctor'
 
+import CatogoryScreen from './components/pages/Catogory';
+
+
+//import { createNavigationContainerRef } from "@react-navigation/native";
+
+//export const navigationRef=createNavigationContainerRef();
 
 const stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
           <stack.Navigator
          
           >
-            
-                  
-                    <stack.Screen name="Details" component={Formpage} options={{header:()=>null}} 
+             <stack.Screen name="Details" component={Formpage} options={{header:()=>null}} 
              
            />
                   <stack.Screen name='Home' component={Homescreen} options={{header:()=>null}}/>
-                  
+                  <stack.Screen name='Doctor' component={Doctor} options={{header:()=>null}}/>
+                  <stack.Screen name='Catogory' component={CatogoryScreen} options={{header:()=>null
+            }}/>
           </stack.Navigator>
        
     </NavigationContainer>
