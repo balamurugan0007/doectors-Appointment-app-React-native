@@ -1,13 +1,36 @@
-import React from 'react'
-import { View,Text, SafeAreaView,Image ,StyleSheet, Pressable, TouchableOpacity} from 'react-native'
+import React, { useState } from 'react'
+import { View,Text, SafeAreaView,Image ,StyleSheet, Pressable, TouchableOpacity,TextInput, Alert} from 'react-native'
 import { Doctorslist } from '../data/Catogory';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import {AsyncStorage} from 'react-native';
+
 
 
 const Doctor = ({route}) => {
     const data=route.params;
   const navigation=useNavigation();
+
+
+  const [date,setdate]=useState()
+  const [month,setmonth]=useState()
+  const [year,setyear]=useState()
+
+
+const getappoitment=async()=>{
+  if (date=== '' || month==='' || year=== ''){
+    Alert.alert("please enter the all fields")
+  
+  }
+    else{
+
+      Alert.alert('appointment request has sent to the doctor')
+
+    }
+}
+
+
+
   return (
    <SafeAreaView style={styles.container}>
       <View style={styles.hederfield}>
@@ -47,11 +70,22 @@ const Doctor = ({route}) => {
                          {profile.tip}
                       </Text>
 
+                     <View style={styles.datefieldview}>
+                          <View style={styles.dateview}>
+                              <TextInput style={styles.formname} placeholder='  date' onChangeText={newText => setdate(newText)}/>
+                              <TextInput style={styles.formname} placeholder='  Month' onChangeText={newText => setmonth(newText)}/>
+                              <TextInput style={styles.formname} placeholder='  year' onChangeText={newText => setyear(newText)}/>
+                          </View>
+                      <Text style={styles.appointmentpara}>Please enter date for an appointment</Text>
+
+                     </View>
+
+
                       <View style={styles.appointmentview}>
                           <TouchableOpacity style={styles.callIconbtn}>
                           <Ionicons name="call"  size={32} color="#1916C8" />
                           </TouchableOpacity>
-                          <TouchableOpacity style={styles.appointment}>
+                          <TouchableOpacity style={styles.appointment} onPress={getappoitment}>
                                <Text style={styles.appointmenttext}>Appiontment</Text>
                           </TouchableOpacity>
                       </View>
@@ -129,7 +163,7 @@ const styles=StyleSheet.create({
   appointmentview:{
     flexDirection:'row',
     justifyContent:'space-between',
-    margin:15,
+    margin:10,
     padding:25,
   },
   appointment:{
@@ -140,6 +174,7 @@ const styles=StyleSheet.create({
     height:45,
 
   },
+
   appointmenttext:{
     color:'#FFFFFF',
     fontFamily:'Inter_700Bold',
@@ -155,6 +190,42 @@ const styles=StyleSheet.create({
     alignItems:'center',
     borderRadius:15,
     height:45,
+  },
+ 
+  dateview:{
+    
+   
+    width:300,
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:8,
+    flexDirection:'row'
+    
+  },
+  formname:{
+    width:70,
+    height:40,
+    margin:7,
+    backgroundColor:"#ffff",
+    color:'black',
+    borderRadius:10,
+    fontFamily:'Inter_400Regular',
+    fontSize:18,
+    borderWidth:1,
+    borderColor:'#1916C8'
+   
+
+  },
+  appointmentpara:{
+    fontFamily:'Inter_500Medium',
+    fontSize:13,
+    color:'#000000',
+    opacity:.65,
+    alignItems:'center'
+  },
+  datefieldview:{
+    justifyContent:'center',
+    alignItems:'center'
   }
 
 })

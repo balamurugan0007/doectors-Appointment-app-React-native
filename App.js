@@ -7,8 +7,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Homescreen from './components/pages/Homescreen';
 import Formpage from './components/pages/Formpage';
-import Splash1 from './components/pages/SplashScreen1';
-import Splash2 from './components/pages/Splash2';
 import Doctor from './components/pages/Doctor'
 
 import CatogoryScreen from './components/pages/Catogory';
